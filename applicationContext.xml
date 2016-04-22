@@ -34,5 +34,38 @@
 		<property name="component" ref="decoratorB3"/>
 	</bean>
 
+	<!-- Composite -->
+	<bean class="com.designedpattern.composite.impl.LeafA" id="leafA"/>
+	<bean class="com.designedpattern.composite.impl.LeafB" id="leafB"/>
+	<bean class="com.designedpattern.composite.impl.LeafC" id="leafC"/>
+	<bean class="com.designedpattern.composite.impl.CompositeA" id="composite1">
+		<property name="comSet">
+			<list>
+				<ref bean="leafA"/>
+				<ref bean="leafB"/>
+				<ref bean="leafC"/>
+			</list>
+		</property>
+	</bean>
+	<bean class="com.designedpattern.composite.impl.CompositeB" id="composite2">
+		<property name="comSet">
+			<list>
+				<ref bean="leafA"/>
+				<ref bean="leafB"/>
+				<ref bean="composite1"/>
+				<ref bean="leafC"/>
+			</list>
+		</property>
+	</bean>
+	<bean class="com.designedpattern.composite.impl.CompositeA" id="composite3">
+		<property name="comSet">
+			<list>
+				<ref bean="leafA"/>
+				<ref bean="leafB"/>
+				<ref bean="composite2"/>
+			</list>
+		</property>
+	</bean>
+	
 	
 </beans>
