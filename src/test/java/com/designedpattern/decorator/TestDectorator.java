@@ -1,20 +1,17 @@
 package com.designedpattern.decorator;
 
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
+import com.designedpattern.baseTest.BaseTest;
 
-
-public class TestDectorator {
+public class TestDectorator extends BaseTest{
 	
 	private IComponent component;
 	
-	private ApplicationContext ac = new FileSystemXmlApplicationContext("applicationContext.xml");
 	
 	@Test
 	public void test1() {
 		System.out.println("**********begin Test1***********");
-		component = (IComponent) ac.getBean("componentA");
+		component = (IComponent) getAc().getBean("componentA");
 		component.showSelf();
 		System.out.println("********** end Test1 ***********");
 	}
@@ -22,7 +19,7 @@ public class TestDectorator {
 	@Test
 	public void test2() {
 		System.out.println("**********begin Test2***********");
-		component = (IComponent) ac.getBean("componentB");
+		component = (IComponent) getAc().getBean("componentB");
 		component.showSelf();
 		System.out.println("********** end Test2 ***********");
 	}
@@ -30,7 +27,7 @@ public class TestDectorator {
 	@Test
 	public void test3() {
 		System.out.println("**********begin Test3***********");
-		component = (IComponent) ac.getBean("decoratorA1");
+		component = (IComponent) getAc().getBean("decoratorA1");
 		component.showSelf();
 		System.out.println("********** end Test3 ***********");
 	}
@@ -38,7 +35,7 @@ public class TestDectorator {
 	@Test
 	public void test4() {
 		System.out.println("**********begin Test4***********");
-		component = (IComponent) ac.getBean("decoratorA2");
+		component = (IComponent) getAc().getBean("decoratorA2");
 		component.showSelf();
 		System.out.println("********** end Test4 ***********");
 	}
@@ -46,7 +43,7 @@ public class TestDectorator {
 	@Test
 	public void test5() {
 		System.out.println("**********begin Test5***********");
-		component = (IComponent) ac.getBean("decoratorB1");
+		component = (IComponent) getAc().getBean("decoratorB1");
 		component.showSelf();
 		System.out.println("********** end Test5 ***********");
 	}
@@ -54,7 +51,7 @@ public class TestDectorator {
 	@Test
 	public void test6() {
 		System.out.println("**********begin Test6***********");
-		component = (IComponent) ac.getBean("decoratorB2");
+		component = (IComponent) getAc().getBean("decoratorB2");
 		component.showSelf();
 		System.out.println("********** end Test6 ***********");
 	}
@@ -62,7 +59,7 @@ public class TestDectorator {
 	@Test
 	public void test7() {
 		System.out.println("**********begin Test7***********");
-		component = (IComponent) ac.getBean("decoratorB3");
+		component = (IComponent) getAc().getBean("decoratorB3");
 		component.showSelf();
 		System.out.println("********** end Test7 ***********");
 	}
@@ -70,7 +67,7 @@ public class TestDectorator {
 	@Test
 	public void test8() {
 		System.out.println("**********begin Test1 ***********");
-		component = (IComponent) ac.getBean("decoratorB4");
+		component = (IComponent) getAc().getBean("decoratorB4");
 		component.showSelf();
 		System.out.println("********** end Test1 ***********");
 	}
