@@ -9,7 +9,7 @@ public class TestDectorator {
 	
 	private IComponent component;
 	
-	ApplicationContext ac = new FileSystemXmlApplicationContext("applicationContext.xml");
+	private ApplicationContext ac = new FileSystemXmlApplicationContext("applicationContext.xml");
 	
 	@Test
 	public void test1() {
@@ -69,10 +69,10 @@ public class TestDectorator {
 	
 	@Test
 	public void test8() {
-		System.out.println("**********begin Test8***********");
+		System.out.println("**********begin Test1 ***********");
 		component = (IComponent) ac.getBean("decoratorB4");
 		component.showSelf();
-		System.out.println("********** end Test8 ***********");
+		System.out.println("********** end Test1 ***********");
 	}
 	
 }
