@@ -7,7 +7,6 @@ public class TestDectorator extends BaseTest{
 	
 	private IComponent component;
 	
-	
 	@Test
 	public void test1() {
 		System.out.println("**********begin Test1***********");

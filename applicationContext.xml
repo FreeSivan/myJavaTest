@@ -67,5 +67,21 @@
 		</property>
 	</bean>
 	
+	<!-- Observer -->
+	<bean class="com.designedpattern.observer.impl.ObserverA" id="observerA">
+		<property name="target" ref="target1"/>
+	</bean>
+	<bean class="com.designedpattern.observer.impl.ObserverB" id="observerB">
+		<property name="target" ref="target1"/>
+	</bean>
+	<bean class="com.designedpattern.observer.Target" id="target1">
+		<property name="observers">
+			<list>
+				<ref bean="observerA"/>
+				<ref bean="observerB"/>
+			</list>
+		</property>
+	</bean>
+	
 	
 </beans>
