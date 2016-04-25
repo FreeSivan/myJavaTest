@@ -83,5 +83,26 @@
 		</property>
 	</bean>
 	
-	
+	<!-- Bridge -->
+	<bean class="com.designedpattern.bridge.impl.ImplementorA" id="implA"/>
+	<bean class="com.designedpattern.bridge.impl.ImplementorB" id="implB"/>
+	<bean class="com.designedpattern.bridge.impl.ImplementorC" id="implC"/>
+	<bean class="com.designedpattern.bridge.impl.ComponentA" id="com1">
+		<property name="impl" ref="implA"/>
+	</bean>	
+	<bean class="com.designedpattern.bridge.impl.ComponentA" id="com2">
+		<property name="impl" ref="implB"/>
+	</bean>	
+	<bean class="com.designedpattern.bridge.impl.ComponentA" id="com3">
+		<property name="impl" ref="implC"/>
+	</bean>
+	<bean class="com.designedpattern.bridge.impl.ComponentB" id="com4">
+		<property name="impl" ref="implA"/>
+	</bean>
+	<bean class="com.designedpattern.bridge.impl.ComponentB" id="com5">
+		<property name="impl" ref="implB"/>
+	</bean>	
+	<bean class="com.designedpattern.bridge.impl.ComponentB" id="com6">
+		<property name="impl" ref="implC"/>
+	</bean>	
 </beans>
