@@ -105,4 +105,15 @@
 	<bean class="com.designedpattern.bridge.impl.ComponentB" id="com6">
 		<property name="impl" ref="implC"/>
 	</bean>	
+	
+	
+	<!-- Proxy -->
+	<bean class="com.designedpattern.proxy.impl.RealData" id="realData"/>
+	<bean class="com.designedpattern.proxy.impl.FutureData" id="futureData">
+		<property name="realData" ref="realData"/>
+	</bean>
+	<bean class="com.designedpattern.proxy.impl.Request" id="request">
+		<property name="data" ref="futureData"/>
+	</bean>
+	
 </beans>
