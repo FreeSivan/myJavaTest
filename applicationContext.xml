@@ -116,4 +116,24 @@
 		<property name="data" ref="futureData"/>
 	</bean>
 	
+	<!-- prototype -->
+	<bean class="com.designedpattern.prototype.impl.ProductA" id="productA">
+		<property name="content" value="content A"/>
+	</bean>
+	<bean class="com.designedpattern.prototype.impl.ProductB" id="productB">
+		<property name="content" value="content B"/>
+	</bean>
+	<bean class="com.designedpattern.prototype.Container" id="container">
+		<property name="proMap">
+			<map>  
+				<entry key="A">
+					<ref local="productA"/>
+				</entry>
+				<entry key="B">
+					<ref local="productB"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
 </beans>
