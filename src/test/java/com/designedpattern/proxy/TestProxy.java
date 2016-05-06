@@ -3,8 +3,6 @@ package com.designedpattern.proxy;
 import org.junit.Test;
 
 import com.designedpattern.baseTest.BaseTest;
-import com.designedpattern.proxy.impl.FutureData;
-import com.designedpattern.proxy.impl.RealData;
 import com.designedpattern.proxy.impl.Request;
 
 public class TestProxy extends BaseTest{

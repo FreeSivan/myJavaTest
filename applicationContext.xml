@@ -107,7 +107,7 @@
 	</bean>	
 	
 	
-	<!-- Proxy -->
+	<!-- proxy -->
 	<bean class="com.designedpattern.proxy.impl.RealData" id="realData"/>
 	<bean class="com.designedpattern.proxy.impl.FutureData" id="futureData">
 		<property name="realData" ref="realData"/>
@@ -132,8 +132,17 @@
 				<entry key="B">
 					<ref local="productB"/>
 				</entry>
-			</map>
+			</map> 
 		</property>
 	</bean>
 	
+	<!-- builder -->
+	<bean class="com.designedpattern.builder.impl.BuilderA" id="builderA"/>
+	<bean class="com.designedpattern.builder.impl.BuilderB" id="builderB"/>
+	<bean class="com.designedpattern.builder.Director" id="director1">
+		<property name="builder" ref="builderA"/>
+	</bean> 
+	<bean class="com.designedpattern.builder.Director" id="director2">
+		<property name="builder" ref="builderB"/>
+	</bean>
 </beans>
