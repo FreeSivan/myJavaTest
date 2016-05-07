@@ -149,4 +149,8 @@
 	<!-- abstract factory -->
 	<bean class="com.designedpattern.abstractfactory.impl.CircusA" id="circusA"/>
 	<bean class="com.designedpattern.abstractfactory.impl.CircusB" id="circusB"/>
+	
+	<!-- factory method -->
+	<bean class="com.designedpattern.factorymethod.impl.FilmA" id="filmA"/>
+	<bean class="com.designedpattern.factorymethod.impl.FilmB" id="filmB"/>
 </beans>
