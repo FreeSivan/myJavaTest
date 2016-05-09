@@ -159,4 +159,27 @@
 	<bean class="com.designedpattern.adapter.impl.Adapter" id="adapter">
 		<property name="userinfo" ref="userinfo"/>
 	</bean>
+	
+	<!-- command -->
+	<bean class="com.designedpattern.command.impl.ReceiverA" id="receiverA" scope="prototype"/>
+	<bean class="com.designedpattern.command.impl.ReceiverB" id="receiverB" scope="prototype"/>
+	<bean class="com.designedpattern.command.impl.ReceiverC" id="receiverC" scope="prototype"/>
+	<bean class="com.designedpattern.command.impl.CommandA" id="commandA">
+		<constructor-arg name="receiver" ref="receiverA"/>
+	</bean>
+	<bean class="com.designedpattern.command.impl.CommandB" id="commandB">
+		<constructor-arg name="receiver" ref="receiverB"/>
+	</bean>
+	<bean class="com.designedpattern.command.impl.CommandC" id="commandC">
+		<constructor-arg name="receiver" ref="receiverB"/>
+	</bean>
+	<bean class="com.designedpattern.command.Invoker" id="invoker" scope="singleton">
+		<property name="comlist">
+			<list>
+				<ref bean="commandA"/>
+				<ref bean="commandB"/>
+				<ref bean="commandC"/>
+			</list>
+		</property>
+	</bean>
 </beans>
