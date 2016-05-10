@@ -228,4 +228,48 @@
 			</map>
 		</property>
 	</bean>
+	
+	<!-- mediator -->
+	<bean class="com.designedpattern.mediator.impl.ColleagueA" id="colleagueA" scope="singleton">
+		<property name="mediator" ref="mediator"/>
+		<property name="collName" value="colleagueA"/>
+	</bean>
+	<bean class="com.designedpattern.mediator.impl.ColleagueB" id="colleagueB" scope="singleton">
+		<property name="mediator" ref="mediator"/>
+		<property name="collName" value="colleagueB"/>
+	</bean>
+	<bean class="com.designedpattern.mediator.impl.ColleagueC" id="colleagueC" scope="singleton">
+		<property name="mediator" ref="mediator"/>
+		<property name="collName" value="colleagueC"/>
+	</bean>
+	<bean class="com.designedpattern.mediator.impl.ColleagueD" id="colleagueD" scope="singleton">
+		<property name="mediator" ref="mediator"/>
+		<property name="collName" value="colleagueD"/>
+	</bean>
+	<bean class="com.designedpattern.mediator.impl.ColleagueE" id="colleagueE" scope="singleton">
+		<property name="mediator" ref="mediator"/>
+		<property name="collName" value="colleagueE"/>
+	</bean>
+	<bean class="com.designedpattern.mediator.Mediator" id="mediator" scope="singleton">
+		<property name="collMap">
+			<map>
+				<entry key="colleagueA">
+					<ref local="colleagueA"/>
+				</entry>
+				<entry key="colleagueB">
+					<ref local="colleagueB"/>
+				</entry>
+				<entry key="colleagueC">
+					<ref local="colleagueC"/>
+				</entry>
+				<entry key="colleagueD">
+					<ref local="colleagueD"/>
+				</entry>
+				<entry key="colleagueE">
+					<ref local="colleagueE"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
 </beans>
