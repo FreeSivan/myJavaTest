@@ -59,4 +59,17 @@ public class TestMediator extends BaseTest{
 		colleague.sendRequest("colleagueE", "hello world");
 		System.out.println("----");
 	}
+	
+	@Test
+	public void test5() {
+		colleague = (Colleague)getAc().getBean("colleagueE");
+		colleague.sendRequest("colleagueA", "hello world");
+		System.out.println("----");
+		colleague.sendRequest("colleagueB", "hello world");
+		System.out.println("----");
+		colleague.sendRequest("colleagueC", "hello world");
+		System.out.println("----");
+		colleague.sendRequest("colleagueD", "hello world");
+		System.out.println("----");
+	}
 }
