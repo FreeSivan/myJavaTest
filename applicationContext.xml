@@ -183,5 +183,49 @@
 		</property>
 	</bean>
 	
-	
+	<!-- state -->
+	<bean class="com.designedpattern.state.impl.StateA" id="stateA" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.impl.StateB" id="stateB" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.impl.StateC" id="stateC" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.impl.StateD" id="stateD" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.impl.StateE" id="stateE" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.Context" id="contextState" scope="singleton">
+		<property name="state" ref="stateA"/>
+	</bean>
+	<bean class="com.designedpattern.state.ContainerState" id="containerState" scope="singleton">
+		<property name="stateMap">
+			<map>
+				<entry key="stateA">
+					<ref local="stateA"/>
+				</entry>
+				<entry key="stateB">
+					<ref local="stateB"/>
+				</entry>
+				<entry key="stateC">
+					<ref local="stateC"/>
+				</entry>
+				<entry key="stateD">
+					<ref local="stateD"/>
+				</entry>
+				<entry key="stateE">
+					<ref local="stateE"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
 </beans>
