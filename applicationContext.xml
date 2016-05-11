@@ -272,4 +272,17 @@
 		</property>
 	</bean>
 	
+	<!-- stragegy -->
+	<bean class="com.designedpattern.strategy.impl.StrategyA" id="strategyA"/>
+	<bean class="com.designedpattern.strategy.impl.StrategyB" id="strategyB"/>
+	<bean class="com.designedpattern.strategy.impl.StrategyC" id="strategyC"/>
+	<bean class="com.designedpattern.strategy.Context" id="strategyContext1">
+		<property name="strategy" ref="strategyA"/>
+	</bean>
+	<bean class="com.designedpattern.strategy.Context" id="strategyContext2">
+		<property name="strategy" ref="strategyB"/>
+	</bean>
+	<bean class="com.designedpattern.strategy.Context" id="strategyContext3">
+		<property name="strategy" ref="strategyC"/>
+	</bean>
 </beans>
