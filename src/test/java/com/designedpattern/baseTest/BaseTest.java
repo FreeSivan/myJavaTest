@@ -5,14 +5,10 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class BaseTest {
 	
-	private ApplicationContext ac = new FileSystemXmlApplicationContext("applicationContext.xml");
-
+	private ApplicationContext ac = (ApplicationContext) new FileSystemXmlApplicationContext("application.xml").getBean("ear.context");
+	
 	public ApplicationContext getAc() {
 		return ac;
 	}
 
-	public void setAc(ApplicationContext ac) {
-		this.ac = ac;
-	}
-	
 }

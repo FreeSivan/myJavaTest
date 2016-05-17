@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context  
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean class="com.designedpattern.state.impl.StateA" id="stateA" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.impl.StateB" id="stateB" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.impl.StateC" id="stateC" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.impl.StateD" id="stateD" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.impl.StateE" id="stateE" scope="singleton">
+		<property name="container" ref="containerState"/>
+		<property name="context" ref="contextState"/>
+	</bean>
+	<bean class="com.designedpattern.state.Context" id="contextState" scope="singleton">
+		<property name="state" ref="stateA"/>
+	</bean>
+	<bean class="com.designedpattern.state.ContainerState" id="containerState" scope="singleton">
+		<property name="stateMap">
+			<map>
+				<entry key="stateA">
+					<ref local="stateA"/>
+				</entry>
+				<entry key="stateB">
+					<ref local="stateB"/>
+				</entry>
+				<entry key="stateC">
+					<ref local="stateC"/>
+				</entry>
+				<entry key="stateD">
+					<ref local="stateD"/>
+				</entry>
+				<entry key="stateE">
+					<ref local="stateE"/>
+				</entry>
+			</map>
+		</property>
+	</bean>        
+
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context  
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">   
+
+
+	<bean class="com.designedpattern.bridge.impl.ImplementorA" id="implA"/>
+	<bean class="com.designedpattern.bridge.impl.ImplementorB" id="implB"/>
+	<bean class="com.designedpattern.bridge.impl.ImplementorC" id="implC"/>
+	<bean class="com.designedpattern.bridge.impl.ComponentA" id="com1">
+		<property name="impl" ref="implA"/>
+	</bean>	
+	<bean class="com.designedpattern.bridge.impl.ComponentA" id="com2">
+		<property name="impl" ref="implB"/>
+	</bean>	
+	<bean class="com.designedpattern.bridge.impl.ComponentA" id="com3">
+		<property name="impl" ref="implC"/>
+	</bean>
+	<bean class="com.designedpattern.bridge.impl.ComponentB" id="com4">
+		<property name="impl" ref="implA"/>
+	</bean>
+	<bean class="com.designedpattern.bridge.impl.ComponentB" id="com5">
+		<property name="impl" ref="implB"/>
+	</bean>	
+	<bean class="com.designedpattern.bridge.impl.ComponentB" id="com6">
+		<property name="impl" ref="implC"/>
+	</bean>	        
+
+</beans>
