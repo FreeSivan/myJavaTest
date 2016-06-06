@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context  
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">   
+
+	<bean class="com.designedpattern.springprototype.impl.ComponentA" id="springComA1" scope="singleton"/>
+	<bean class="com.designedpattern.springprototype.impl.ComponentB" id="springComB1" scope="singleton"/>
+	
+	<bean class="com.designedpattern.springprototype.Product" id="springProcuct1" scope="singleton">
+		<property name="component" ref="springComA1"/>
+	</bean>
+
+	<bean class="com.designedpattern.springprototype.impl.ComponentA" id="springComA2" scope="prototype"/>
+	<bean class="com.designedpattern.springprototype.impl.ComponentB" id="springComB2" scope="prototype"/>
+	<bean class="com.designedpattern.springprototype.Product" id="springProcuct2" scope="prototype">
+		<property name="component" ref="springComA2"/>
+	</bean>
+	
+</beans>
