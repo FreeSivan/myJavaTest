@@ -17,5 +17,6 @@ public class TestReflexInvoke extends BaseTest{
 		reflex.dispatchInvokeFilterOrderByAnn("batch");
 		System.out.println("====================================");
 		reflex.dispatchInvokeFilterOrderByAnn("single");
+		
 	}
 }

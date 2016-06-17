@@ -20,4 +20,13 @@
 		<property name="component" ref="springComA2"/>
 	</bean>
 	
+	
+	<bean class="com.designedpattern.springprototype.impl.ComponentA" id="springComA3"/>
+	<bean class="com.designedpattern.springprototype.impl.ComponentB" id="springComB3"/>
+	
+	<bean class="com.designedpattern.springprototype.Product" id="springProcuct3">
+		<property name="component" ref="springComA1"/>
+	</bean>
+	
+	
 </beans>

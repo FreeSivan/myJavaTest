@@ -50,6 +50,11 @@ public class ReflexImpl extends BaseDispatchInvoke{
 		System.out.println("ReflexImpl test3");
 	}
 	
+	@AutoInvoke(id = 2, style="long")
+	public void longargvtest(String str) {
+		System.out.println(str);
+	}
+	
 	public void dispatchInvokeFilterByName(String regex) {
 		dispatchInvokeFilterByName(new Object[]{}, regex);
 	}
@@ -60,5 +65,9 @@ public class ReflexImpl extends BaseDispatchInvoke{
 	
 	public void dispatchInvokeFilterOrderByAnn(String ann) {
 		dispatchInvokeFilterOrderByAnn(new Object[]{}, ann);
+	}
+	
+	public void dispatchInvokeFilterOrderByAnn(String ann, String str) {
+		dispatchInvokeFilterOrderByAnn(new Object[]{str}, ann);
 	}
 }

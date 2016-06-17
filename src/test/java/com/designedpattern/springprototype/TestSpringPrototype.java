@@ -21,5 +21,12 @@ public class TestSpringPrototype extends BaseTest{
 		product.showSelf();
 		product = (Product)getAc().getBean("springProcuct2");
 		product.showSelf();
+		System.out.println("===========================================");
+		product = (Product)getAc().getBean("springProcuct3");
+		product.showSelf();
+		product = (Product)getAc().getBean("springProcuct3");
+		product.showSelf();
+		product = (Product)getAc().getBean("springProcuct3");
+		product.showSelf();
 	}
 }
